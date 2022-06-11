@@ -51,8 +51,8 @@ public class CommandManager extends Manager implements CommandExecutor, TabCompl
     public CommandManager(PlayerParticles playerParticles) {
         super(playerParticles);
 
-        PluginCommand pp = this.playerParticles.getCommand("pp");
-        PluginCommand ppo = this.playerParticles.getCommand("ppo");
+        PluginCommand pp = this.playerParticles.getCommand("effects");
+        PluginCommand ppo = this.playerParticles.getCommand("effectso");
 
         if (pp == null || ppo == null) {
             Bukkit.getPluginManager().disablePlugin(this.playerParticles);
@@ -144,7 +144,7 @@ public class CommandManager extends Manager implements CommandExecutor, TabCompl
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         LocaleManager localeManager = PlayerParticles.getInstance().getManager(LocaleManager.class);
 
-        if (cmd.getName().equalsIgnoreCase("pp")) {
+        if (cmd.getName().equalsIgnoreCase("effects")) {
             String commandName = args.length > 0 ? args[0] : "";
             CommandModule commandModule = this.findMatchingCommand(commandName);
             if (commandModule == null) {
@@ -178,7 +178,7 @@ public class CommandManager extends Manager implements CommandExecutor, TabCompl
             });
 
             return true;
-        } else if (cmd.getName().equalsIgnoreCase("ppo")) {
+        } else if (cmd.getName().equalsIgnoreCase("effectso")) {
             String[] replacedArgs = new String[args.length];
             Player player = sender instanceof Player ? (Player) sender : null;
             for (int i = 0; i < args.length; i++)
@@ -200,7 +200,7 @@ public class CommandManager extends Manager implements CommandExecutor, TabCompl
      */
     @Override
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("pp")) {
+        if (cmd.getName().equalsIgnoreCase("effects")) {
             PPlayer pplayer;
             if (sender instanceof Player && !ParticleUtils.getTargetBlock((Player) sender).getType().name().contains("COMMAND_BLOCK")) {
                 pplayer = PlayerParticlesAPI.getInstance().getPPlayer(sender);
@@ -224,7 +224,7 @@ public class CommandManager extends Manager implements CommandExecutor, TabCompl
                     return commandModule.onTabComplete(pplayer, cmdArgs);
                 }
             }
-        } else if (cmd.getName().equalsIgnoreCase("ppo")) {
+        } else if (cmd.getName().equalsIgnoreCase("effectso")) {
             return this.ppoCommand.onTabComplete(sender, args);
         }
         
