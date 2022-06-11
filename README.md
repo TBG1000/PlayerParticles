@@ -3,6 +3,8 @@
 A Spigot particles plugin with more customizability than any other. Create particles around players 
 or blocks with any particle effect in the game with a plethora of skillfully crafted styles.
 
+This fork implements changes by [applenick's](https://github.com/applenick) fork named [Effects](https://github.com/applenick/Effects). More specifically, the changes on this [particular branch](https://github.com/applenick/Effects/tree/pgm) which allow the plugin to integrate with [PGM](https://github.com/PGMDev/PGM).
+
 ### Wiki
 
 For information about how to use the plugin or API within the plugin, please refer to the [Wiki](https://github.com/Rosewood-Development/PlayerParticles/wiki)
