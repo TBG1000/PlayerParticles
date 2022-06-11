@@ -57,7 +57,7 @@ public class OtherCommandModule implements CommandModuleSecondary {
             localeManager.sendMessage(sender, "other-success", StringPlaceholders.single("player", other.getName()));
             
             String[] cmdArgs = Arrays.copyOfRange(args, 2, args.length);
-            commandModule.onCommandExecute(otherPPlayer, cmdArgs);
+            commandModule.onCommandExecute(otherPPlayer, cmdArgs, true);
         });
     }
 

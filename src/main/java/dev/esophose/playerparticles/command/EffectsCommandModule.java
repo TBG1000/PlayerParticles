@@ -11,7 +11,7 @@ import java.util.List;
 public class EffectsCommandModule implements CommandModule {
 
     @Override
-    public void onCommandExecute(PPlayer pplayer, String[] args) {
+    public void onCommandExecute(PPlayer pplayer, String[] args, boolean force) {
         LocaleManager localeManager = PlayerParticles.getInstance().getManager(LocaleManager.class);
 
         List<String> effectList = PlayerParticles.getInstance().getManager(PermissionManager.class).getEffectNamesUserHasPermissionFor(pplayer);

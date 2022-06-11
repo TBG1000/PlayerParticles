@@ -10,7 +10,7 @@ import net.md_5.bungee.api.ChatColor;
 public class VersionCommandModule implements CommandModule {
 
     @Override
-    public void onCommandExecute(PPlayer pplayer, String[] args) {
+    public void onCommandExecute(PPlayer pplayer, String[] args, boolean force) {
         LocaleManager localeManager = PlayerParticles.getInstance().getManager(LocaleManager.class);
         localeManager.sendCustomMessage(pplayer, ChatColor.YELLOW + "Running PlayerParticles " + ChatColor.AQUA + "v" + PlayerParticles.getInstance().getDescription().getVersion());
         localeManager.sendCustomMessage(pplayer, ChatColor.YELLOW + "Plugin created by: " + ChatColor.AQUA + "Esophose");

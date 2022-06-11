@@ -32,7 +32,7 @@ public class ParticleStyleIcosphere extends ConfiguredParticleStyle {
     private int step;
 
     protected ParticleStyleIcosphere() {
-        super("icosphere", true, true, 0);
+        super("icosphere", true, true, 0, false);
     }
 
     @Override

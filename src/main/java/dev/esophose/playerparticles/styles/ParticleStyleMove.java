@@ -25,7 +25,7 @@ public class ParticleStyleMove extends ConfiguredParticleStyle implements Listen
     private int multiplier;
 
     protected ParticleStyleMove() {
-        super("move", false, false, 0);
+        super("move", false, false, 0, true);
     }
 
     @Override

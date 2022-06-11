@@ -10,9 +10,13 @@ import java.util.List;
 public class HelpCommandModule implements CommandModule {
 
     @Override
-    public void onCommandExecute(PPlayer pplayer, String[] args) {
+    public void onCommandExecute(PPlayer pplayer, String[] args, boolean force) {
         LocaleManager localeManager = PlayerParticles.getInstance().getManager(LocaleManager.class);
         boolean isConsole = pplayer.getPlayer() == null;
+
+        if (!canExecuteCommand(pplayer, true, force)) {
+            return;
+        }
 
         localeManager.sendMessage(pplayer, "command-descriptions");
         List<CommandModule> cmds = PlayerParticles.getInstance().getManager(CommandManager.class).getCommands();

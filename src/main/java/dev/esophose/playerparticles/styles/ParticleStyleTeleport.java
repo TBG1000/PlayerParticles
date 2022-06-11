@@ -29,7 +29,7 @@ public class ParticleStyleTeleport extends ConfiguredParticleStyle implements Li
     private double speed;
 
     protected ParticleStyleTeleport() {
-        super("teleport", false, false, 0);
+        super("teleport", false, false, 0, true);
     }
 
     @Override

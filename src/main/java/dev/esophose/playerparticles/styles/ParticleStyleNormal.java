@@ -12,7 +12,7 @@ import org.bukkit.Location;
 public class ParticleStyleNormal extends ConfiguredParticleStyle {
 
     protected ParticleStyleNormal() {
-        super("normal", true, false, 0);
+        super("normal", true, false, 0, false);
     }
 
     @Override

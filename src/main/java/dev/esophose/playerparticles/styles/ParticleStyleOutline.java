@@ -23,7 +23,7 @@ public class ParticleStyleOutline extends ConfiguredParticleStyle {
     private int step;
 
     protected ParticleStyleOutline() {
-        super("outline", true, true, 0);
+        super("outline", true, true, 0, false);
     }
 
     @Override

@@ -27,7 +27,7 @@ public class ParticleStyleArrows extends ConfiguredParticleStyle implements List
     private int arrowTrackingTime;
 
     protected ParticleStyleArrows() {
-        super("arrows", false, false, 0);
+        super("arrows", false, false, 0, true);
 
         this.projectiles = new ArrayList<>();
 

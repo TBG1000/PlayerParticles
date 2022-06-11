@@ -28,7 +28,7 @@ public class ParticleStyleDeath extends ConfiguredParticleStyle implements Liste
     private final long ticksPerParticle = ConfigurationManager.Setting.TICKS_PER_PARTICLE.getLong();
 
     protected ParticleStyleDeath() {
-        super("death", false, false, 0);
+        super("death", false, false, 0, true);
     }
 
     @Override

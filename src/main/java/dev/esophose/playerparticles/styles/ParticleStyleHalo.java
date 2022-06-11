@@ -18,7 +18,7 @@ public class ParticleStyleHalo extends ConfiguredParticleStyle {
     private double playerOffset;
 
     protected ParticleStyleHalo() {
-        super("halo", true, false, -0.5);
+        super("halo", true, false, -0.5, false);
     }
 
     @Override

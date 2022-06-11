@@ -12,8 +12,12 @@ import java.util.List;
 public class ListCommandModule implements CommandModule {
 
     @Override
-    public void onCommandExecute(PPlayer pplayer, String[] args) {
+    public void onCommandExecute(PPlayer pplayer, String[] args, boolean force) {
         LocaleManager localeManager = PlayerParticles.getInstance().getManager(LocaleManager.class);
+
+        if (!canExecuteCommand(pplayer, true, force)) {
+            return;
+        }
 
         List<ParticlePair> particles = new ArrayList<>(pplayer.getActiveParticles());
         particles.sort(Comparator.comparingInt(ParticlePair::getId));

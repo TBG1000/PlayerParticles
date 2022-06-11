@@ -10,7 +10,7 @@ import org.bukkit.util.StringUtil;
 public class DefaultCommandModule implements CommandModule {
 
     @Override
-    public void onCommandExecute(PPlayer pplayer, String[] args) {
+    public void onCommandExecute(PPlayer pplayer, String[] args, boolean force) {
         // The default command just opens the GUI, execute the GUICommandModule
         ((GUICommandModule) PlayerParticles.getInstance().getManager(CommandManager.class).findMatchingCommand("gui"))
                 .onCommandExecute(pplayer, new String[0], false);

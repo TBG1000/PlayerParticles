@@ -21,7 +21,7 @@ public class ParticleStyleTwins extends ConfiguredParticleStyle {
     private int maxStepY = 30;
 
     protected ParticleStyleTwins() {
-        super("twins", true, true, 0);
+        super("twins", true, true, 0, false);
     }
 
     @Override

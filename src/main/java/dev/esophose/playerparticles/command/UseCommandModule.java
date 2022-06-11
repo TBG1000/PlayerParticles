@@ -27,7 +27,7 @@ import org.bukkit.util.StringUtil;
 public class UseCommandModule implements CommandModule {
 
     @Override
-    public void onCommandExecute(PPlayer pplayer, String[] args) {
+    public void onCommandExecute(PPlayer pplayer, String[] args, boolean force) {
         if (args.length < 2) {
             CommandModule.printUsage(pplayer, this);
             return;

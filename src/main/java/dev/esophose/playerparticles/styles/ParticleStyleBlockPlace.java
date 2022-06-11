@@ -24,7 +24,7 @@ public class ParticleStyleBlockPlace extends ConfiguredParticleStyle implements 
     private double particleSpeed;
 
     protected ParticleStyleBlockPlace() {
-        super("blockplace", false, false, 0);
+        super("blockplace", false, false, 0, true);
     }
 
     @Override

@@ -16,7 +16,7 @@ public class ParticleStyleRings extends ConfiguredParticleStyle {
     private int maxStep;
 
     protected ParticleStyleRings() {
-        super("rings", true, true, 0);
+        super("rings", true, true, 0, false);
     }
 
     @Override

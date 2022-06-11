@@ -27,20 +27,22 @@ public abstract class ConfiguredParticleStyle implements ParticleStyle {
     private boolean canBeFixed;
     private boolean canToggleWithMovement;
     private boolean canToggleWithCombat;
+    private boolean isEventBased;
     private double fixedEffectOffset;
     private Material guiIconMaterial;
 
-    protected ConfiguredParticleStyle(String internalStyleName, boolean canBeFixedByDefault, boolean canToggleWithMovementByDefault, double fixedEffectOffsetByDefault) {
-        this(null, internalStyleName, canBeFixedByDefault, canToggleWithMovementByDefault, fixedEffectOffsetByDefault);
+    protected ConfiguredParticleStyle(String internalStyleName, boolean canBeFixedByDefault, boolean canToggleWithMovementByDefault, double fixedEffectOffsetByDefault, boolean isEventBased) {
+        this(null, internalStyleName, canBeFixedByDefault, canToggleWithMovementByDefault, fixedEffectOffsetByDefault, isEventBased);
     }
 
-    protected ConfiguredParticleStyle(ParticlePack owningPack, String internalStyleName, boolean canBeFixedByDefault, boolean canToggleWithMovementByDefault, double fixedEffectOffsetByDefault) {
+    protected ConfiguredParticleStyle(ParticlePack owningPack, String internalStyleName, boolean canBeFixedByDefault, boolean canToggleWithMovementByDefault, double fixedEffectOffsetByDefault, boolean isEventBased) {
         this.owningPack = owningPack;
         this.internalStyleName = internalStyleName;
         this.canBeFixedByDefault = canBeFixedByDefault;
         this.canToggleWithMovementByDefault = canToggleWithMovementByDefault;
         this.canToggleWithCombatByDefault = true;
         this.fixedEffectOffsetByDefault = fixedEffectOffsetByDefault;
+        this.isEventBased = isEventBased;
         this.playerParticles = PlayerParticles.getInstance();
     }
 
@@ -152,6 +154,11 @@ public abstract class ConfiguredParticleStyle implements ParticleStyle {
     @Override
     public final double getFixedEffectOffset() {
         return this.fixedEffectOffset;
+    }
+
+    @Override
+    public final boolean isEventBased() {
+        return this.isEventBased;
     }
 
     /**

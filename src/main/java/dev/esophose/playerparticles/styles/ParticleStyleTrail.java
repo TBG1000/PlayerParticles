@@ -26,7 +26,7 @@ public class ParticleStyleTrail extends ConfiguredParticleStyle implements Liste
     private double speed;
 
     protected ParticleStyleTrail() {
-        super("trail", false, false, 0);
+        super("trail", false, false, 0, true);
     }
 
     @Override

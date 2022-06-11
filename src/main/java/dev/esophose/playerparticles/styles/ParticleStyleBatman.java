@@ -20,7 +20,7 @@ public class ParticleStyleBatman extends ConfiguredParticleStyle {
     private int spawnDelay;
 
     protected ParticleStyleBatman() {
-        super("batman", true, true, -1);
+        super("batman", true, true, -1, false);
     }
 
     @Override

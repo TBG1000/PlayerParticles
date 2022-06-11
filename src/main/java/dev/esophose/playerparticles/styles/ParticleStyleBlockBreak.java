@@ -24,7 +24,7 @@ public class ParticleStyleBlockBreak extends ConfiguredParticleStyle implements 
     private double particleSpeed;
 
     protected ParticleStyleBlockBreak() {
-        super("blockbreak", false, false, 0);
+        super("blockbreak", false, false, 0, true);
     }
 
     @Override

@@ -50,7 +50,7 @@ public class ParticleStyleCube extends ConfiguredParticleStyle {
     private int particlesPerEdge;
 
     protected ParticleStyleCube() {
-        super("cube", true, true, 0);
+        super("cube", true, true, 0, false);
     }
 
     @Override

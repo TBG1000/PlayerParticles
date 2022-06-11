@@ -25,13 +25,19 @@ public class SpigotParticleSpawner extends ParticleSpawner {
 
         if (particleEffect == ParticleEffect.SCULK_CHARGE) {
             for (Player player : getPlayersInRange(center, isLongRange, owner))
-                player.spawnParticle(particleEffect.getSpigotEnum(), center.getX(), center.getY(), center.getZ(), amount, offsetX, offsetY, offsetZ, speed, 0F);
+                if (player.canSee(owner)) {
+                    player.spawnParticle(particleEffect.getSpigotEnum(), center.getX(), center.getY(), center.getZ(), amount, offsetX, offsetY, offsetZ, speed, 0F);
+                }
         } else if (particleEffect == ParticleEffect.SHRIEK) {
             for (Player player : getPlayersInRange(center, isLongRange, owner))
-                player.spawnParticle(particleEffect.getSpigotEnum(), center.getX(), center.getY(), center.getZ(), amount, offsetX, offsetY, offsetZ, speed, 0);
+                if (player.canSee(owner)) {
+                    player.spawnParticle(particleEffect.getSpigotEnum(), center.getX(), center.getY(), center.getZ(), amount, offsetX, offsetY, offsetZ, speed, 0);
+                }
         } else {
             for (Player player : getPlayersInRange(center, isLongRange, owner))
-                player.spawnParticle(particleEffect.getSpigotEnum(), center.getX(), center.getY(), center.getZ(), amount, offsetX, offsetY, offsetZ, speed);
+                if (player.canSee(owner)) {
+                    player.spawnParticle(particleEffect.getSpigotEnum(), center.getX(), center.getY(), center.getZ(), amount, offsetX, offsetY, offsetZ, speed);
+                }
         }
     }
 

@@ -27,8 +27,12 @@ import org.bukkit.util.StringUtil;
 public class EditCommandModule implements CommandModule {
 
     @Override
-    public void onCommandExecute(PPlayer pplayer, String[] args) {
+    public void onCommandExecute(PPlayer pplayer, String[] args, boolean force) {
         LocaleManager localeManager = PlayerParticles.getInstance().getManager(LocaleManager.class);
+
+        if(!canExecuteCommand(pplayer, true, force)) {
+            return;
+        }
 
         if (args.length < 3) {
             CommandModule.printUsage(pplayer, this);

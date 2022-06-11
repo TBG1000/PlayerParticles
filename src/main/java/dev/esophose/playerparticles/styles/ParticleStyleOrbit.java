@@ -18,7 +18,7 @@ public class ParticleStyleOrbit extends ConfiguredParticleStyle {
     private double radius;
 
     protected ParticleStyleOrbit() {
-        super("orbit", true, true, 0);
+        super("orbit", true, true, 0, false);
     }
 
     @Override

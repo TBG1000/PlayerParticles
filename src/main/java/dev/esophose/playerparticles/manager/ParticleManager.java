@@ -1,6 +1,7 @@
 package dev.esophose.playerparticles.manager;
 
 import dev.esophose.playerparticles.PlayerParticles;
+import dev.esophose.playerparticles.hook.PGMHook;
 import dev.esophose.playerparticles.hook.WorldGuardHook;
 import dev.esophose.playerparticles.manager.ConfigurationManager.Setting;
 import dev.esophose.playerparticles.particles.FixedParticleEffect;
@@ -197,9 +198,12 @@ public class ParticleManager extends Manager implements Listener, Runnable {
             
             // Loop for FixedParticleEffects
             // Don't spawn particles if the world doesn't allow it
-            for (FixedParticleEffect effect : pplayer.getFixedParticles())
-                if (effect.getLocation().getWorld() != null && permissionManager.isWorldEnabled(effect.getLocation().getWorld().getName()))
-                    this.displayFixedParticleEffect(effect);
+            for (ParticlePair particles : pplayer.getActiveParticles()) {
+                // Work around, even though player may still have particles enabled. Will not display unless has permission
+                if(permissionManager.hasEffectPermission(pplayer, particles.getEffect())) {
+                    this.displayParticles(pplayer, particles, player.getLocation().clone().add(0, 1, 0));
+                }
+            }
         }
     }
 
@@ -236,6 +240,11 @@ public class ParticleManager extends Manager implements Listener, Runnable {
 
             if (!pplayer.isInAllowedRegion())
                 return;
+
+            // Display Effects only to Observers
+            if (PGMHook.enabled() && PGMHook.isParticipating(pplayer.getPlayer()) && !particle.getStyle().isEventBased()) {
+                return;
+            }
 
             if (particle.getStyle().canToggleWithMovement() && pplayer.isMoving()) {
                 switch (Setting.TOGGLE_ON_MOVE.getString().toUpperCase()) {

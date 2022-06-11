@@ -16,7 +16,7 @@ public class ParticleStyleFeet extends ConfiguredParticleStyle {
     private int particlesPerTick;
 
     protected ParticleStyleFeet() {
-        super("feet", true, false, 0.5);
+        super("feet", true, false, 0.5, false);
     }
 
     @Override

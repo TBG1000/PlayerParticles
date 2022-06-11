@@ -11,7 +11,10 @@ import java.util.List;
 public class StylesCommandModule implements CommandModule {
 
     @Override
-    public void onCommandExecute(PPlayer pplayer, String[] args) {
+    public void onCommandExecute(PPlayer pplayer, String[] args, boolean force) {
+        if(!canExecuteCommand(pplayer, true, force)) {
+            return;
+        }
         List<String> styleNames = PlayerParticles.getInstance().getManager(PermissionManager.class).getStyleNamesUserHasPermissionFor(pplayer);
         StringBuilder toSend = new StringBuilder();
         for (String name : styleNames) {

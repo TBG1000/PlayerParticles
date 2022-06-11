@@ -34,7 +34,7 @@ public class ParticleStyleSwords extends ConfiguredParticleStyle implements List
     }
 
     protected ParticleStyleSwords() {
-        super("swords", false, false, 0);
+        super("swords", false, false, 0, true);
     }
 
     @Override

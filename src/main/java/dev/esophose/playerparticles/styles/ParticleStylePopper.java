@@ -25,7 +25,7 @@ public class ParticleStylePopper extends ConfiguredParticleStyle {
     private double popOffset;
 
     protected ParticleStylePopper() {
-        super("popper", true, true, 0.5);
+        super("popper", true, true, 0.5, false);
     }
 
     @Override

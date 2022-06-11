@@ -12,7 +12,7 @@ public class ParticleStylePoint extends ConfiguredParticleStyle {
     private double offset;
 
     protected ParticleStylePoint() {
-        super("point", true, false, -0.5);
+        super("point", true, false, -0.5, false);
     }
 
     @Override

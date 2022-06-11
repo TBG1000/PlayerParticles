@@ -106,6 +106,13 @@ public interface ParticleStyle {
     }
 
     /**
+     * @return true if the particle is only displayed when a specific event is called
+     */
+    default boolean isEventBased() {
+        return false;
+    }
+
+    /**
      * Gets the ParticleStyle with the name given, returns null if not found
      * 
      * @param styleName The name of the style to search for

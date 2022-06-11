@@ -20,7 +20,7 @@ public class ParticleStyleWhirlwind extends ConfiguredParticleStyle {
     private double offset;
 
     protected ParticleStyleWhirlwind() {
-        super("whirlwind", true, true, 0.5);
+        super("whirlwind", true, true, 0.5, false);
     }
 
     @Override

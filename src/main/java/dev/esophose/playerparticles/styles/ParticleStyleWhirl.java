@@ -20,7 +20,7 @@ public class ParticleStyleWhirl extends ConfiguredParticleStyle {
     private double offset;
 
     protected ParticleStyleWhirl() {
-        super("whirl", true, true, 0.5);
+        super("whirl", true, true, 0.5, false);
     }
 
     @Override

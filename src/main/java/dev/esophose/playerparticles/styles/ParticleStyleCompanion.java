@@ -44,7 +44,7 @@ public class ParticleStyleCompanion extends ConfiguredParticleStyle {
     private double xOffset, yOffset, zOffset;
 
     protected ParticleStyleCompanion() {
-        super("companion", true, false, 1);
+        super("companion", true, false, 1, false);
     }
 
     @Override

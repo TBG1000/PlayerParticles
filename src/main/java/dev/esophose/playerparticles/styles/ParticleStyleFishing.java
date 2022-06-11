@@ -35,7 +35,7 @@ public class ParticleStyleFishing extends ConfiguredParticleStyle implements Lis
     private Set<Projectile> projectiles;
 
     protected ParticleStyleFishing() {
-        super("fishing", false, false, 0);
+        super("fishing", false, false, 0, true);
 
         this.projectiles = new HashSet<>();
 

@@ -44,7 +44,7 @@ public class ParticleStyleVortex extends ConfiguredParticleStyle {
     private int maxStep;
 
     protected ParticleStyleVortex() {
-        super("vortex", true, true, 0.5);
+        super("vortex", true, true, 0.5, false);
     }
 
     @Override

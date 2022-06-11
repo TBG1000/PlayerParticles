@@ -22,7 +22,7 @@ public class ParticleStyleHurt extends ConfiguredParticleStyle implements Listen
     private int thickMultiplier;
 
     protected ParticleStyleHurt() {
-        super("hurt", false, false, 0);
+        super("hurt", false, false, 0, true);
     }
 
     @Override

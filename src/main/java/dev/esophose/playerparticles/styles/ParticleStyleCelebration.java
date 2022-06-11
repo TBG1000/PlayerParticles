@@ -37,7 +37,7 @@ public class ParticleStyleCelebration extends ConfiguredParticleStyle {
     private ParticleEffect fuseEffect;
 
     protected ParticleStyleCelebration() {
-        super("celebration", true, true, 0);
+        super("celebration", true, true, 0, false);
     }
 
     @Override
